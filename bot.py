@@ -91,16 +91,18 @@ def add_birthday(args, contacts):
         return f"Birthday {args[1]} added for {name}"
     else:
         #return add_contact(args, contacts)
-        return "{name} is not in contacts. At first create a contact using 'add' command"
+        return f"{name} is not in contacts. At first create a contact using 'add' command"
 
 @input_error
 def show_birthday(args, contacts):
     name = args[0]
     record = contacts.find(name)
-    if record: return record.birthday
+    if record: 
+        if record.birthday: return record.birthday
+        else: return f"{name} does not have birthday saved"
     else:
         #return add_contact(args, contacts)
-        return "{name} is not in contacts. At first create a contact using 'add' command"
+        return f"{name} is not in contacts. At first create a contact using 'add' command"
     
     
 
@@ -132,9 +134,9 @@ def main():
             print(phone(args, contacts))
         elif command == "all":
             print(all(contacts))
-        elif command == "add_birthday":
+        elif command == "add-birthday":
             print(add_birthday(args, contacts))
-        elif command == "show_birthday":
+        elif command == "show-birthday":
             print(show_birthday(args, contacts))
         elif command == "birthdays":
             print(contacts.get_upcoming_birthdays())
