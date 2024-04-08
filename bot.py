@@ -12,33 +12,7 @@ def input_error(func):
             return print("Name not found in contacts")
     return inner
 
-# def input_error_add(func):
-#     def inner(*args, **kwargs):
-#         try:
-#             return func(*args, **kwargs)
-#         #except ValueError:
-#             #return "gimme name"
-#     return inner
 
-# def input_error_phone(func):
-#     def inner(*args, **kwargs):
-#         try:
-#             return func(*args, **kwargs)
-#         #except IndexError:
-#             #return "gimme name"
-#         #except KeyError:
-#             #return "name was not found"
-#     return inner
-
-# def input_error_change(func):
-#     def inner(*args, **kwargs):
-#         try:
-#             return func(*args, **kwargs)
-#         #except ValueError:
-#             #return "gimme name and phone"
-#         #except KeyError:
-#             #return "name was not found"
-#     return inner
 
 def parse_input(user_input):
     cmd, *args = user_input.split()
